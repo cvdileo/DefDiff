@@ -1,10 +1,10 @@
-#include "StorkApp.h"
+#include "DefdiffApp.h"
 #include "Moose.h"
 #include "AppFactory.h"
 #include "ModulesApp.h"
 
 template<>
-InputParameters validParams<StorkApp>()
+InputParameters validParams<DefdiffApp>()
 {
   InputParameters params = validParams<MooseApp>();
 
@@ -13,36 +13,36 @@ InputParameters validParams<StorkApp>()
   return params;
 }
 
-StorkApp::StorkApp(const std::string & name, InputParameters parameters) :
+DefdiffApp::DefdiffApp(const std::string & name, InputParameters parameters) :
     MooseApp(name, parameters)
 {
   srand(processor_id());
 
   Moose::registerObjects(_factory);
   ModulesApp::registerObjects(_factory);
-  StorkApp::registerObjects(_factory);
+  DefdiffApp::registerObjects(_factory);
 
   Moose::associateSyntax(_syntax, _action_factory);
   ModulesApp::associateSyntax(_syntax, _action_factory);
-  StorkApp::associateSyntax(_syntax, _action_factory);
+  DefdiffApp::associateSyntax(_syntax, _action_factory);
 }
 
-StorkApp::~StorkApp()
+DefdiffApp::~DefdiffApp()
 {
 }
 
 void
-StorkApp::registerApps()
+DefdiffApp::registerApps()
 {
-  registerApp(StorkApp);
+  registerApp(DefdiffApp);
 }
 
 void
-StorkApp::registerObjects(Factory & factory)
+DefdiffApp::registerObjects(Factory & factory)
 {
 }
 
 void
-StorkApp::associateSyntax(Syntax & syntax, ActionFactory & action_factory)
+DefdiffApp::associateSyntax(Syntax & syntax, ActionFactory & action_factory)
 {
 }
