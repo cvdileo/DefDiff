@@ -31,6 +31,7 @@ DefdiffApp::~DefdiffApp()
 {
 }
 
+extern "C" void DefdiffApp__registerApps() { DefdiffApp::registerApps(); }
 void
 DefdiffApp::registerApps()
 {
