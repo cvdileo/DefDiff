@@ -13,10 +13,9 @@ InputParameters validParams<DefdiffApp>()
   return params;
 }
 
-DefdiffApp::DefdiffApp(const std::string & name, InputParameters parameters) :
-    MooseApp(name, parameters)
+DefdiffApp::DefdiffApp(InputParameters parameters) :
+    MooseApp(parameters)
 {
-  srand(processor_id());
 
   Moose::registerObjects(_factory);
   ModulesApp::registerObjects(_factory);
