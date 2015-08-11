@@ -11,7 +11,7 @@ InputParameters validParams<DefdiffApp>();
 class DefdiffApp : public MooseApp
 {
 public:
-  DefdiffApp(const std::string & name, InputParameters parameters);
+  DefdiffApp(InputParameters parameters);
   virtual ~DefdiffApp();
 
   static void registerApps();
